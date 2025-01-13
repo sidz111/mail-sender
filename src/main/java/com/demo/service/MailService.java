@@ -15,7 +15,7 @@ import jakarta.mail.internet.MimeMessage;
 
 @Service
 public class MailService {
-	
+
     @Autowired
     private JavaMailSender javaMailSender;
 
@@ -27,7 +27,9 @@ public class MailService {
 
         // Splitting multiple recipients by comma
         String[] recipients = sendTo.split(",");
-        helper.setTo(recipients);
+        
+        // Using BCC for confidentiality
+        helper.setBcc(recipients);
 
         helper.setSubject(subject);
         
