@@ -37,6 +37,6 @@ public class MailController {
         } catch (MessagingException | IllegalStateException e) {
             model.addAttribute("error", "Error while sending mail: " + e.getMessage());
         }
-        return "redirect:/";
+        return "success-page";
     }
 }
